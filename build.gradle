@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.aitesting'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Selenium WebDriver
+    implementation 'org.seleniumhq.selenium:selenium-java:4.18.1'
+    
+    // TestNG for test execution
+    testImplementation 'org.testng:testng:7.9.0'
+    
+    // WebDriverManager for browser driver management
+    implementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
+    
+    // Apache Commons for utilities
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    
+    // JSON processing
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+    
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.11'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
+    
+    // Lombok for reducing boilerplate code
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
+
+test {
+    useTestNG()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+} 
